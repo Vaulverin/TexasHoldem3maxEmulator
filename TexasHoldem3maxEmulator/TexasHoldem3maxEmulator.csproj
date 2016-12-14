@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CEF4AA5-BCBA-497B-8F0D-8861A8983FA6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TexasHoldem3maxEmulator</RootNamespace>
+    <AssemblyName>TexasHoldem3maxEmulator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GENTIME</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agents\AgressiveBot.cs" />
+    <Compile Include="Agents\BaseBot.cs" />
+    <Compile Include="Agents\HistoryPlayer.cs" />
+    <Compile Include="Agents\IAgent.cs" />
+    <Compile Include="Agents\Player.cs" />
+    <Compile Include="Agents\StupidBot.cs" />
+    <Compile Include="Agents\TightBot.cs" />
+    <Compile Include="BoardSituation.cs" />
+    <Compile Include="EmulatorPlayer.cs" />
+    <Compile Include="HoldemHand\HandAnalysis.cs" />
+    <Compile Include="HoldemHand\HandEquity.cs" />
+    <Compile Include="HoldemHand\HandEvaluator.cs" />
+    <Compile Include="HoldemHand\HandIterator.cs" />
+    <Compile Include="HoldemHand\PocketHands.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Exam.lexer.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Exam.parser.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\PocketHandsQuery.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\cs0.lexer.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\cs0.parser.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\dfa.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\genbase0.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\lexer.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\olist.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\parser.cs" />
+    <Compile Include="HoldemHand\PocketQueryParser\Runtime\serialise.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackPlayers.cs" />
+    <Compile Include="TableInfo.cs" />
+    <Compile Include="TableLog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="HoldemHand\PocketQueryParser\Exam.lexer" />
+    <None Include="HoldemHand\PocketQueryParser\Exam.parser" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
